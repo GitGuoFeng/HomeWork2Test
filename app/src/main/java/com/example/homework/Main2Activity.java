@@ -26,6 +26,8 @@ public class Main2Activity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String result = adapterView.getItemAtPosition(i).toString().substring(2,3);
                 Toast.makeText(Main2Activity.this,"您选择了第"+result+"项",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Main2Activity.this, Main3Activity.class);
+                startActivity(intent);
             }
         });
     }
