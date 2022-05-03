@@ -9,6 +9,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.io.Serializable;
+
 import static com.example.homework.R.array.ctype;
 
 public class Main2Activity extends AppCompatActivity {
@@ -26,7 +29,7 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 switch (position) {
-                    case 0://1
+                    case 0:
                         String result1 = adapterView.getItemAtPosition(position).toString().substring(2,3);
                         Toast.makeText(Main2Activity.this,"您选择了第"+result1+"项",Toast.LENGTH_SHORT).show();
                         Intent intent1 = new Intent(Main2Activity.this, Main3Activity.class);
@@ -42,7 +45,16 @@ public class Main2Activity extends AppCompatActivity {
                         startActivity(intent2);
                         break;
                     case 2:
-
+                        String result3 = adapterView.getItemAtPosition(position).toString().substring(2,3);
+                        Toast.makeText(Main2Activity.this,"您选择了第"+result3+"项",Toast.LENGTH_SHORT).show();
+                        SerializableObject object = new SerializableObject();
+                        object.setId(12);
+                        object.setName("啊啊啊");
+                        Intent intent3 = new Intent(Main2Activity.this,Button3Activity.class);
+                        intent3.putExtra("int",123)
+                                .putExtra("byte",1)
+                                .putExtra("object",object);
+                        startActivity(intent3);
                         break;
                     case 3:
 
@@ -50,7 +62,8 @@ public class Main2Activity extends AppCompatActivity {
                     case 4:
 
                         break;
-
+                    default:
+                        break;
                 }
             }
         });
