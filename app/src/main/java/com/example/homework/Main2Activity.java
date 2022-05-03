@@ -21,13 +21,37 @@ public class Main2Activity extends AppCompatActivity {
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,ctype,R.layout.support_simple_spinner_dropdown_item);
         listView.setAdapter(adapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String result = adapterView.getItemAtPosition(i).toString().substring(2,3);
-                Toast.makeText(Main2Activity.this,"您选择了第"+result+"项",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Main2Activity.this, Main3Activity.class);
-                startActivity(intent);
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                switch (position) {
+                    case 0://1
+                        String result1 = adapterView.getItemAtPosition(position).toString().substring(2,3);
+                        Toast.makeText(Main2Activity.this,"您选择了第"+result1+"项",Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(Main2Activity.this, Main3Activity.class);
+                        startActivity(intent1);
+                        break;
+                    case 1:
+                        String result2 = adapterView.getItemAtPosition(position).toString().substring(2,3);
+                        Toast.makeText(Main2Activity.this,"您选择了第"+result2+"项",Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(Main2Activity.this,Main4Activity.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putCharSequence("result2",result2);
+                        intent2.putExtras(bundle);
+                        startActivity(intent2);
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+
+                }
             }
         });
     }

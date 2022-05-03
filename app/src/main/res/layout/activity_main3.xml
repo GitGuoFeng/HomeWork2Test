@@ -7,28 +7,28 @@
     tools:context=".Main3Activity"
     android:id="@+id/linearLayout">
 
-    <ProgressBar
-        android:id="@+id/progressBar1"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:max="100"
-        android:padding="10px" />
+  <ProgressBar
+      android:id="@+id/progressBar1"
+      style="@android:style/Widget.ProgressBar.Horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="20dp"
+      android:max="100"
+      android:padding="10px" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/imageView1"
-        android:paddingLeft="10px"
-        android:scaleType="fitCenter"
-        android:src="@drawable/rabbit"/>
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/imageView2"
-        android:paddingLeft="10px"
-        android:scaleType="fitCenter"
-        android:src="@drawable/img02"/>
+  <ImageView
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:id="@+id/imageView1"
+      android:paddingLeft="10px"
+      android:scaleType="fitCenter"
+      android:src="@drawable/rabbit"/>
+  <ImageView
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:id="@+id/imageView2"
+      android:paddingLeft="10px"
+      android:scaleType="fitCenter"
+      android:src="@drawable/img02"/>
 
 
 </LinearLayout>

@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(MainActivity.this,"杈撳叆鐨勭敤鎴峰悕瀵嗙爜閿欒",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"输入的用户名密码错误",Toast.LENGTH_SHORT).show();
                 }
             }
         });
