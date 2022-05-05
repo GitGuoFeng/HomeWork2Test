@@ -10,8 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.io.Serializable;
-
 import static com.example.homework.R.array.ctype;
 
 public class Main2Activity extends AppCompatActivity {
@@ -57,10 +55,12 @@ public class Main2Activity extends AppCompatActivity {
                         startActivity(intent3);
                         break;
                     case 3:
-
+                        String result4 = adapterView.getItemAtPosition(position).toString().substring(2,3);
+                        Toast.makeText(Main2Activity.this,"您选择了第"+result4+"项",Toast.LENGTH_SHORT).show();
+                        Intent intent4 = new Intent(Main2Activity.this,Button4Activity.class);
+                        startActivity(intent4);
                         break;
                     case 4:
-
                         break;
                     default:
                         break;

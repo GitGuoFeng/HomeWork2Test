@@ -30,8 +30,8 @@ public class Button3Activity extends AppCompatActivity {
         byte b = intent.getByteExtra("byte", (byte)0);
         SerializableObject object = (SerializableObject) intent.getSerializableExtra("object");
 
-        textView1.setText("int数据为："+a);
-        textView2.setText("byte数据为："+b);
+        textView1.setText("int数据为：" + a);
+        textView2.setText("byte数据为：" + b);
         textView3.setText("Serializable数据为：id:"+object.getId()+"name:"+object.getName());
 
         IntentFilter intentFilter = new IntentFilter();
@@ -49,7 +49,7 @@ public class Button3Activity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();//获取网络状态connectivityManager.getActiveNetworkInfo();
+            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
             if (activeNetworkInfo != null && activeNetworkInfo.isAvailable()) {
                 Toast.makeText(Button3Activity.this, "已连网！", Toast.LENGTH_LONG).show();
             } else {
