@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +22,15 @@ public class MainActivity extends AppCompatActivity {
                 EditText username = (EditText)findViewById(R.id.userName);
                 String name = username.getText().toString();
                 String passwd = password.getText().toString();
-                if(name.equals("admin") && passwd.equals("123456")){
+                /*if(name.equals("admin") && passwd.equals("123456")){
                     Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(MainActivity.this,"输入的用户名密码错误",Toast.LENGTH_SHORT).show();
-                }
+                    Toast.makeText(MainActivity.this,"请输入正确的账号密码",Toast.LENGTH_SHORT).show();
+
+                }*/
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(intent);
             }
         });
         Button button2 = (Button)findViewById(R.id.button2);

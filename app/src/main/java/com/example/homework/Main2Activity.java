@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import static com.example.homework.R.array.ctype;
 
 public class Main2Activity extends AppCompatActivity {
@@ -21,11 +22,49 @@ public class Main2Activity extends AppCompatActivity {
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,ctype,R.layout.support_simple_spinner_dropdown_item);
         listView.setAdapter(adapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String result = adapterView.getItemAtPosition(i).toString().substring(2,3);
-                Toast.makeText(Main2Activity.this,"您选择了第"+result+"项",Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                switch (position) {
+                    case 0:
+                        String result1 = adapterView.getItemAtPosition(position).toString().substring(2,3);
+                        Toast.makeText(Main2Activity.this,"您选择了第"+result1+"项",Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(Main2Activity.this, Main3Activity.class);
+                        startActivity(intent1);
+                        break;
+                    case 1:
+                        String result2 = adapterView.getItemAtPosition(position).toString().substring(2,3);
+                        Toast.makeText(Main2Activity.this,"您选择了第"+result2+"项",Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(Main2Activity.this,Main4Activity.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putCharSequence("result2",result2);
+                        intent2.putExtras(bundle);
+                        startActivity(intent2);
+                        break;
+                    case 2:
+                        String result3 = adapterView.getItemAtPosition(position).toString().substring(2,3);
+                        Toast.makeText(Main2Activity.this,"您选择了第"+result3+"项",Toast.LENGTH_SHORT).show();
+                        SerializableObject object = new SerializableObject();
+                        object.setId(12);
+                        object.setName("啊啊啊");
+                        Intent intent3 = new Intent(Main2Activity.this,Button3Activity.class);
+                        intent3.putExtra("int",123)
+                                .putExtra("byte",1)
+                                .putExtra("object",object);
+                        startActivity(intent3);
+                        break;
+                    case 3:
+                        String result4 = adapterView.getItemAtPosition(position).toString().substring(2,3);
+                        Toast.makeText(Main2Activity.this,"您选择了第"+result4+"项",Toast.LENGTH_SHORT).show();
+                        Intent intent4 = new Intent(Main2Activity.this,Button4Activity.class);
+                        startActivity(intent4);
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        break;
+                }
             }
         });
     }
